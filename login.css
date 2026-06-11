@@ -41,6 +41,12 @@ body{
     color:#9fb4d9;
 }
 
+.left img{
+    height: 300px;
+    align-items: center;
+    margin-top: 50px;
+
+}
 
 .bank-icon::before{
     content:"";
