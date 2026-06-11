@@ -4,6 +4,18 @@
 ═══════════════════════════════════════════════ */
 
 /* ── Summary strip ── */
+
+.rightcontainer {
+            width: 82%;
+            display: flex;
+            flex-direction: column;
+            background: #f0f2f3;
+            color: rgb(0, 0, 0);
+            position: relative;
+            padding: 30px 40px;
+            gap: 24px;
+        }
+
 .inv-summary-strip {
     background: #021633;
     border-radius: 20px;
@@ -179,6 +191,12 @@
     letter-spacing: 0.02em;
     transition: background 0.18s, transform 0.12s;
     margin-top: 10px; /* Changed from auto to prevent unexpected pushing */
+}
+
+.topmost{
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 14px 22px;
 }
 
 .open-calc-btn:hover {
