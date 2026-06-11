@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Finance Bank - Premium Banking Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ========================================
+           APEX FINANCE HOMEPAGE - MASTER STYLESHEET
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background: #edf1f6;
+            color: #3a4e64;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           NAVIGATION BAR
+           ======================================== */
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(2, 22, 51, 0.08);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #021633;
+        }
+
+        .nav-logo i {
+            color: #3274DA;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-link {
+            color: #3a4e64;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #3274DA;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-login,
+        .btn-signup {
+            padding: 10px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #3274DA;
+        }
+
+        .btn-login {
+            color: #3274DA;
+            background: transparent;
+        }
+
+        .btn-login:hover {
+            background: #3274DA;
+            color: #ffffff;
+        }
+
+        .btn-signup {
+            background: #3274DA;
+            color: #ffffff;
+        }
+
+        .btn-signup:hover {
+            background: #021633;
+            border-color: #021633;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #021633;
+            transition: all 0.3s;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: #021633;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #7a8fa3;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 16px 32px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #1D3557;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(2, 22, 51, 0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #021633;
+            border: 2px solid #021633;
+        }
+
+        .btn-secondary:hover {
+            background: #021633;
+            color: #ffffff;
+        }
+
+        .floating-card {
+            position: absolute;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(2, 22, 51, 0.1);
+        }
+
+        .card-1 {
+            width: 180px;
+            height: 200px;
+            background: #1D3557;
+            top: 20px;
+            left: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card-2 {
+            width: 160px;
+            height: 180px;
+            background: #1D3557;
+            top: 100px;
+            right: 40px;
+            animation: float 3.5s ease-in-out infinite 0.2s;
+        }
+
+        .card-3 {
+            width: 140px;
+            height: 160px;
+            background: #1D3557;
+            bottom: 20px;
+            left: 80px;
+            animation: float 4s ease-in-out infinite 0.4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* ========================================
+           STATS SECTION
+           ======================================== */
+        .stats {
+            background: #1D3557;
+            padding: 60px 40px;
+            margin: 60px 0;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #3274DA;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #a8bdd4;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           SERVICES SECTION
+           ======================================== */
+        .services {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #021633;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #7a8fa3;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e4ecf5;
+            border-radius: 22px;
+            padding: 30px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 12px 36px rgba(2, 22, 51, 0.12);
+            transform: translateY(-4px);
+            border-color: #3274DA;
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: #1D3557;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: #021633;
+        }
+
+        .service-card p {
+            color: #7a8fa3;
+            font-size: 0.95rem;
+        }
+
+        .service-link {
+            color: #3274DA;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            width: fit-content;
+        }
+
+        .service-link:hover {
+            gap: 12px;
+            color: #021633;
+        }
+
+        /* ========================================
+           FEATURES SECTION
+           ======================================== */
+        .features {
+            background: #f8fafc;
+            padding: 80px 40px;
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .features-left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .features-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rupee-huge {
+            font-size: 15rem;
+            color: #1D3557;
+            font-weight: 700;
+            user-select: none;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #1D3557;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1.1rem;
+            color: #021633;
+            margin-bottom: 8px;
+        }
+
+        .feature-text p {
+            color: #7a8fa3;
+            font-size: 0.95rem;
+        }
+
+ 
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: #021633;
+            color: #a8bdd4;
+            padding: 0px 40px 20px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: #3274DA;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 30px;
+            }
+
+            .hero {
+                padding: 40px 30px;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+
+            .rupee-huge {
+                font-size: 10rem;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-buttons {
+                gap: 8px;
+            }
+
+            .btn-login,
+            .btn-signup {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .features-left {
+                gap: 16px;
+            }
+
+            
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-buttons {
+                display: none;
+            }
+
+            .hero {
+                padding: 20px 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.4rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .stats {
+                padding: 40px 20px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .services {
+                padding: 0 16px;
+            }
+
+            .section-header h2 {
+                font-size: 1.4rem;
+            }
+
+            
+
+         
+
+            .footer {
+                padding: 40px 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bank"></i>
+                <span>Apex Finance</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn-login">Login</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Financial Future Starts Here</h1>
+            <p>Experience premium banking with cutting-edge technology and personalized solutions for your wealth management.</p>
+            <div class="hero-buttons">
+                <a href="login.html" class="btn-primary">Open an Account</a>
+                <a href="#" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <img src="logo.png" alt="Logo" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    </section>
+
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">100K+</div>
+                <div class="stat-label">Active Customers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Financial Products</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Customer Support</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$5B+</div>
+                <div class="stat-label">Assets Under Management</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Banking Services</h2>
+            <p>Comprehensive financial solutions tailored to your needs</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>Credit Cards</h3>
+                <p>Premium credit cards with exclusive rewards, cashback, and travel benefits.</p>
+                <a href="cards.html" class="service-link">Explore Cards <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3>Fund Transfer</h3>
+                <p>Fast and secure money transfers with competitive rates and real-time tracking.</p>
+                <a href="fundtransfer.html" class="service-link">Transfer Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Home Loans</h3>
+                <p>Affordable home loans with flexible repayment options and quick approval.</p>
+                <a href="home-loan.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Auto Loans</h3>
+                <p>Vehicle financing solutions with competitive interest rates and easy documentation.</p>
+                <a href="car-loan.html" class="service-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <h3>Personal Loans</h3>
+                <p>Quick personal loans for all your needs with instant disbursal and low EMI.</p>
+                <a href="personal-loan.html" class="service-link">Get Loan <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Investments</h3>
+                <p>Grow your wealth with our diversified investment portfolio and expert guidance.</p>
+                <a href="investment.html" class="service-link">Invest Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Insurance</h3>
+                <p>Comprehensive insurance coverage protecting your family and assets.</p>
+                <a href="insurance.html" class="service-link">View Plans <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Support</h3>
+                <p>Dedicated 24/7 customer support for all your banking queries and concerns.</p>
+                <a href="support.html" class="service-link">Contact Us <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>Why Choose Apex Finance</h2>
+            <p>Industry-leading features designed for modern banking</p>
+        </div>
+        <div class="features-container">
+            <div class="features-left">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Mobile First</h4>
+                        <p>Manage your finances on the go with our intuitive mobile application.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Bank-Grade Security</h4>
+                        <p>Military-grade encryption protecting your data and transactions.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Competitive Rates</h4>
+                        <p>Best interest rates and lowest fees in the market.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Instant Processing</h4>
+                        <p>Real-time transaction processing and settlement.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="features-right">
+                <span class="rupee-huge">₹</span>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <footer id="contact" class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Finance Bank. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ========================================
+        // APEX FINANCE HOMEPAGE - JAVASCRIPT
+        // ========================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMobileMenu();
+            initializeSmoothScroll();
+        });
+
+        // ========================================
+        // MOBILE MENU TOGGLE
+        // ========================================
+        function initializeMobileMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+            }
+
+            // Close menu when a link is clicked
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+
+        // ========================================
+        // SMOOTH SCROLL FOR NAVIGATION
+        // ========================================
+        function initializeSmoothScroll() {
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href === '#') return;
+                    
+                    const target = document.querySelector(href);
+                    
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // ========================================
+        // NAVBAR BACKGROUND ON SCROLL
+        // ========================================
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 10) {
+                navbar.style.boxShadow = '0 4px 12px rgba(2, 22, 51, 0.12)';
+            } else {
+                navbar.style.boxShadow = '0 2px 8px rgba(2, 22, 51, 0.08)';
+            }
+        });
+
+        // ========================================
+        // COUNTER ANIMATION FOR STATS
+        // ========================================
+        function animateCounters() {
+            const stats = [
+                { element: document.querySelector('.stat-item:nth-child(1) .stat-number'), target: '100K+', isNumber: true },
+                { element: document.querySelector('.stat-item:nth-child(2) .stat-number'), target: '50+', isNumber: true },
+                { element: document.querySelector('.stat-item:nth-child(4) .stat-number'), target: '$5B+', isNumber: true }
+            ];
+
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('counted');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.stat-number').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Call counter animation when page loads
+        window.addEventListener('load', animateCounters);
+    </script>
+</body>
+</html>
