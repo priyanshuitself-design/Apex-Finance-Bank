@@ -1,0 +1,421 @@
+/* ═══════════════════════════════════════════════
+   investment.css  —  Apex Financial Bank
+   Extends web.css, no overrides
+═══════════════════════════════════════════════ */
+
+/* ── Summary strip ── */
+.inv-summary-strip {
+    background: #021633;
+    border-radius: 20px;
+    padding: 28px 40px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inv-stat {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.inv-stat-label {
+    font-size: 0.72rem !important;
+    color: #6e8fad !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    display: block;
+    white-space: nowrap;
+}
+
+.inv-stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    display: block;
+    white-space: nowrap;
+}
+
+.inv-stat-value.gain {
+    color: #3ddc74 !important;
+}
+
+.inv-stat-divider {
+    width: 1px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.13);
+    flex-shrink: 0;
+    margin: 0 16px;
+}
+
+/* ── FD & RD grid ── */
+.investment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    align-items: start; /* CRITICAL: Prevents the unopened card from stretching awkwardly */
+}
+
+/* ── Each card ── */
+.invest-card {
+    background: #ffffff;
+    border: 1px solid #e4ecf5;
+    border-radius: 22px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: box-shadow 0.2s, transform 0.18s;
+    height: max-content; /* Allows cards to scale purely based on their own internal content */
+}
+
+.invest-card:hover {
+    box-shadow: 0 8px 36px rgba(2, 22, 51, 0.10);
+    transform: translateY(-2px);
+}
+
+/* ── Card header ── */
+.invest-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.invest-icon-wrap {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fd-icon { background: #e8f0fb; }
+.rd-icon { background: #eaeff7; }
+
+.invest-icon-wrap svg {
+    width: 36px;
+    height: 36px;
+}
+
+.invest-card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.invest-card-title h3 {
+    font-size: 1.15rem;
+    color: #021633;
+    font-weight: 700;
+    margin: 0;
+}
+
+.invest-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    background: #e0ecff;
+    color: #3274DA;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.rd-tag {
+    background: #e8ecf3;
+    color: #021633;
+}
+
+/* ── Description ── */
+.invest-desc {
+    font-size: 0.875rem !important;
+    color: #7a8fa3 !important;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ── Highlight chips ── */
+.invest-highlights {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.inv-hl {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #f4f8fd;
+    border: 1px solid #e2ecf7;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 0.78rem;
+    color: #3a4e64;
+    white-space: nowrap;
+}
+
+/* ── Open/Close calculator button ── */
+.open-calc-btn {
+    background: #021633;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 22px;
+    font-size: 0.93rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    letter-spacing: 0.02em;
+    transition: background 0.18s, transform 0.12s;
+    margin-top: 10px; /* Changed from auto to prevent unexpected pushing */
+}
+
+.open-calc-btn:hover {
+    background: #3274DA;
+    transform: translateY(-1px);
+}
+
+/* ── Calculator panel ── */
+.calculator-panel {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background: #f4f8fd;
+    border: 1px solid #d8e6f3;
+    border-radius: 16px;
+    padding: 22px 20px;
+    animation: calcSlide 0.22s ease;
+}
+
+@keyframes calcSlide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.calculator-panel.open { display: flex; }
+
+.calc-header { display: flex; flex-direction: column; gap: 4px; }
+
+.calc-header h4 {
+    font-size: 0.95rem;
+    color: #021633;
+    font-weight: 700;
+    margin: 0;
+}
+
+.calc-formula {
+    font-size: 0.72rem;
+    color: #8faab8;
+    font-style: italic;
+}
+
+/* ── Inputs ── */
+.calc-fields { display: grid; gap: 12px; }
+
+.calc-field label {
+    display: block;
+    font-size: 0.79rem;
+    color: #5a6e82;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.calc-field input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #cddcec;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    background: #ffffff;
+    color: #021633;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.calc-field input:focus {
+    border-color: #3274DA;
+    box-shadow: 0 0 0 3px rgba(50, 116, 218, 0.10);
+}
+
+/* ── Calculate button ── */
+.calc-btn {
+    background: #3274DA;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 0.91rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.18s;
+}
+
+.calc-btn:hover { background: #1f5ab8; }
+
+/* ── Results ── */
+.calc-result {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #d8e6f3;
+    border-radius: 12px;
+    padding: 16px 18px;
+    animation: calcSlide 0.2s ease;
+}
+
+.calc-result.show { display: flex; }
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.87rem;
+    color: #6080a0;
+    padding: 3px 0;
+}
+
+.result-row span:last-child {
+    color: #021633;
+    font-weight: 600;
+}
+
+.gain-text { color: #1e9952 !important; }
+
+.result-divider {
+    height: 1px;
+    background: #e4ecf5;
+    margin: 2px 0;
+}
+
+.result-total { font-size: 0.95rem !important; }
+
+.result-total span:last-child {
+    font-size: 1.1rem !important;
+    color: #021633 !important;
+}
+
+/* ── Ratio bar ── */
+.result-bar-wrap { margin-top: 4px; }
+
+.result-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: #8faab8;
+    margin-bottom: 5px;
+}
+
+.result-bar {
+    height: 9px;
+    border-radius: 20px;
+    background: #e4ecf5;
+    overflow: hidden;
+    display: flex;
+}
+
+.result-bar-principal {
+    background: #3274DA;
+    transition: width 0.45s ease;
+}
+
+.result-bar-interest {
+    background: #3ddc74;
+    transition: width 0.45s ease;
+}
+
+/* ── Active investments table ── */
+.inv-table-card {
+    background: #ffffff;
+    border: 1px solid #e4ecf5;
+    border-radius: 22px;
+    padding: 30px 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inv-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.inv-table-header h3 {
+    font-size: 1.02rem;
+    color: #021633;
+    font-weight: 700;
+    margin: 0;
+}
+
+.inv-table-count {
+    font-size: 0.78rem;
+    color: #8099b3;
+    background: #eef3fa;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+.inv-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inv-table th {
+    font-size: 0.75rem;
+    color: #90a6be;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-bottom: 1px solid #e8f0f8;
+    text-align: left;
+    background: none;
+}
+
+.inv-table td {
+    padding: 15px 16px;
+    font-size: 0.89rem;
+    color: #3a4e64;
+    border-bottom: 1px solid #f0f6fb;
+}
+
+.inv-table tbody tr:last-child td { border-bottom: none; }
+
+.inv-table tbody tr:hover td {
+    background: #f7fafd;
+    cursor: default;
+}
+
+/* ── Type & status badges ── */
+.type-badge {
+    font-size: 0.73rem;
+    font-weight: 700;
+    padding: 4px 11px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+
+.fd-badge { background: #e0ecff; color: #3274DA; }
+.rd-badge { background: #e8ecf3; color: #021633; }
+
+.status-badge {
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 20px;
+}
+
+.status-badge.active { background: #e2f7ec; color: #1a8a46; }

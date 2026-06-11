@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Insurance</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="web.css">
+<link rel="stylesheet" href="insurance.css">
+<script src="insurance.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+     <aside class="sidebar">
+            <div class="logo">
+                <h2>APEX FINANCIAL BANK</h2>
+            </div>
+            <ul>
+                <li>
+                    <a href="dashboard.html" >
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fundtransfer.html">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span>Fund Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cards.html">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="investment.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Investment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loan.html">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Loan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="insurance.html" class="active">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Insurance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="support.html">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+    <main class="main">
+        <div class="insurance-header">
+            <h1>Insurance Center</h1>
+            <p>Manage your protection plans and calculate new premiums dynamically.</p>
+        </div>
+
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h3>Active Policies</h3>
+                <p class="stat-val">2 Policies</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Total Coverage</h3>
+                <p class="stat-val primary-text">₹75,00,000</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Annual Premium</h3>
+                <p class="stat-val alert-text">₹48,000</p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="new-insurance.html" class="btn-primary">New Insurance</a>
+            <a href="onging-policies.html" class="btn-secondary">Ongoing Policies</a>
+        </div>
+
+        <section class="calculator">
+            <h2>Premium Calculator</h2>
+            <p class="calc-subtitle">Estimate your annual policy premiums instantly.</p>
+
+            <div class="form-group">
+                <label for="coverage">Desired Coverage Amount (₹)</label>
+                <input type="number" id="coverage" placeholder="e.g. 5000000" min="100000" step="50000">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Applicant Age (Years)</label>
+                <input type="number" id="age" placeholder="e.g. 30" min="18" max="65">
+            </div>
+
+            <div class="form-group">
+                <label for="term">Policy Term (Years)</label>
+                <input type="number" id="term" placeholder="e.g. 20" min="5" max="40">
+            </div>
+
+            <button type="button" onclick="calculatePremium()">Calculate Premium</button>
+
+            <div id="resultContainer" class="result-box hidden">
+                <p>Estimated Annual Premium:</p>
+                <span id="premiumResult">₹0</span>
+            </div>
+        </section>
+    </main>
+
+</div>
+
+
+</body>
+</html>

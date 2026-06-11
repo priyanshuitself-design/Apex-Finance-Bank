@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Center - Apex Finance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="web.css">
+<link rel="stylesheet" href="loan.css">
+<script src="loan.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+     <aside class="sidebar">
+            <div class="logo">
+                <h2>APEX FINANCIAL BANK</h2>
+            </div>
+            <ul>
+                <li>
+                    <a href="dashboard.html" >
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fundtransfer.html">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span>Fund Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cards.html">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="investment.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Investment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loan.html"  class="active">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Loan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="insurance.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Insurance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="support.html">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+    <div class="rightcontainer">
+        <div class="loan-page">
+            <div class="topmost">
+                <h2>Loan Center</h2>
+            </div>
+
+            <div class="loan-sections">
+                <div class="loan-container">
+                    <h3>Apply for a New Loan</h3>
+                    <div class="loan-btn-container">
+                        <a href="personal-loan.html" class="loan-btn">Personal Loan (8.5%)</a>
+                        <a href="home-loan.html" class="loan-btn">Home Loan (6.2%)</a>
+                        <a href="car-loan.html" class="loan-btn">Car Loan (7.5%)</a>
+                    </div>
+                </div>
+
+                <div class="loan-container">
+                    <h3>Ongoing Loans</h3>
+                    <a class="ongoing-item" style="margin-top: 20px;">
+                        <strong>Personal Loan</strong><br>
+                        Balance: $5,000 | Due: July 15
+                    </a>
+                </div>
+            </div>
+
+            <div class="transaction">
+                <h3>Loan Calculator</h3>
+                <div class="input-group">
+                    <label>Requested Amount ($)</label>
+                    <input type="number" id="amt" placeholder="Enter amount">
+                    
+                    <label>Interest Rate (%)</label>
+                    <select id="rate">
+                        <option value="8.5">Personal Loan (8.5%)</option>
+                        <option value="6.2">Home Loan (6.2%)</option>
+                        <option value="7.5">Car Loan (7.5%)</option>
+                    </select>
+
+                    <label>Loan Tenure (Months)</label>
+                    <input type="number" id="tenure" placeholder="e.g. 24">
+                    
+                    <button onclick="calculateLoan()">Calculate Monthly Payment</button>
+                    <div id="result-display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

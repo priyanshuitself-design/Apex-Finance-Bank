@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Financial Bank – Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js" defer></script>
+</head>
+<body>
+
+<div class="app-wrapper">
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>APEX FINANCIAL BANK</h2>
+            </div>
+            <ul>
+                <li>
+                    <a href="dashboard.html" class="active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fundtransfer.html">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span>Fund Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cards.html">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="investment.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Investment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loan.html">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Loan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="insurance.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Insurance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="support.html">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main">
+
+            <div class="topmost">
+                <div class="greeting">
+                    <h2 id="greeting">Welcome Back</h2>
+                    <p>Manage your transactions, accounts, and financial health</p>
+                </div>
+                <span id="datetime">--</span>
+            </div>
+
+            <div class="dashboard-cards-grid">
+
+                <div class="dash-card balance-card">
+                    <div class="dash-card-header">
+                        <span class="dash-card-label">Available Balance</span>
+                        <button class="hide-btn" onclick="toggleBalance()">
+                            <i class="fa-solid fa-eye-slash"></i> Hide
+                        </button>
+                    </div>
+                    <div class="dash-card-value" id="balance">₹1,25,000</div>
+                    <p class="dash-card-desc">Primary Savings Account</p>
+                </div>
+
+                <div class="dash-card spent-card">
+                    <div class="dash-card-header">
+                        <span class="dash-card-label">Total Spent</span>
+                        <div class="dash-mini-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+                    </div>
+                    <div class="dash-card-value loss-text">₹45,000</div>
+                    <p class="dash-card-desc">This billing period</p>
+                </div>
+
+                <div class="dash-card received-card">
+                    <div class="dash-card-header">
+                        <span class="dash-card-label">Total Received</span>
+                        <div class="dash-mini-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    </div>
+                    <div class="dash-card-value gain-text">₹80,000</div>
+                    <p class="dash-card-desc">Direct deposits &amp; transfers</p>
+                </div>
+
+                <div class="dash-card dynamic-card">
+                    <div class="dash-card-header">
+                        <span class="dash-card-label">Active Cards</span>
+                        <div class="dash-mini-icon"><i class="fa-solid fa-credit-card"></i></div>
+                    </div>
+                    <div class="dash-card-value">2</div>
+                    <p class="dash-card-desc">1 Debit · 1 Credit Card</p>
+                </div>
+
+            </div>
+
+            <div class="quick-actions-strip">
+                <button onclick="location.href='fundtransfer.html'">
+                    <i class="fa-solid fa-paper-plane"></i> Send Money
+                </button>
+                <button onclick="location.href='fundtransfer.html'">
+                    <i class="fa-solid fa-receipt"></i> Pay Bills
+                </button>
+                <button onclick="location.href='loan.html'">
+                    <i class="fa-solid fa-file-invoice-dollar"></i> Apply Loan
+                </button>
+                <button onclick="location.href='investment.html'">
+                    <i class="fa-solid fa-vault"></i> Invest
+                </button>
+            </div>
+
+            <div class="dashboard-analytics-layout">
+                
+                <div class="dash-table-card full-width-layout">
+                    <div class="dash-section-header">
+                        <h3>Recent Transactions</h3>
+                        <a href="transactions.html" class="dash-view-all">View All</a>
+                    </div>
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08 Jun</td>
+                                <td><span class="type-badge spent-badge">Spent</span></td>
+                                <td class="table-amount-loss">₹1,200</td>
+                            </tr>
+                            <tr>
+                                <td>05 Jun</td>
+                                <td><span class="type-badge spent-badge">Spent</span></td>
+                                <td class="table-amount-loss">₹2,500</td>
+                            </tr>
+                            <tr>
+                                <td>01 Jun</td>
+                                <td><span class="type-badge received-badge">Received</span></td>
+                                <td class="table-amount-gain">₹15,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="dashboard-charts-layout-row">
+                    
+                    <div class="chart-box-card">
+                        <div class="chart-header">
+                            <h3>Income vs Expense</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-box-card">
+                        <div class="chart-header">
+                            <h3>Monthly Spending</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+</div>
+
+</body>
+</html>

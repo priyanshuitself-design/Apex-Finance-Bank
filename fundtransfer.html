@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Finance Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="fundtransfer.css">
+    <script src="fundtransfer.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+     <aside class="sidebar">
+            <div class="logo">
+                <h2>APEX FINANCIAL BANK</h2>
+            </div>
+            <ul>
+                <li>
+                    <a href="dashboard.html" >
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fundtransfer.html" class="active">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span>Fund Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cards.html">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="investment.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Investment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loan.html">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Loan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="insurance.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Insurance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="support.html">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    <!-- RIGHT CONTAINER -->
+    <div class="rightcontainer">
+
+        <!-- Top bar -->
+        <div class="topmost">
+            <div class="greeting">
+                <h2>Fund Transfer</h2>
+                <p>Move money quickly and securely</p>
+            </div>
+            <span id="datetime">Loading...</span>
+        </div>
+
+        <!-- Balance + Tab bar row -->
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+            <div class="balance-pill">
+                <span class="label">Available Balance</span>
+                <span class="amount">₹9,83,920</span>
+            </div>
+
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="switchTab('apex', this)">To Apex Bank Account</button>
+                <button class="tab-btn" onclick="switchTab('other', this)">To Other Bank Account</button>
+            </div>
+        </div>
+
+        <!-- ── APEX BANK TRANSFER FORM ── -->
+        <div class="transfer-card visible" id="form-apex">
+            <h3>Transfer to Apex Bank Account</h3>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>From Account</label>
+                    <select id="apex-from">
+                        <option>Savings — ****4821</option>
+                        <option>Current — ****2209</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Beneficiary Account Number</label>
+                    <input type="text" id="apex-accno" placeholder="Enter 12-digit account number" maxlength="12">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Beneficiary Name</label>
+                    <input type="text" id="apex-name" placeholder="Account holder name">
+                </div>
+                <div class="form-group">
+                    <label>Transfer Type</label>
+                    <select id="apex-type">
+                        <option>IMPS (Instant)</option>
+                        <option>NEFT</option>
+                        <option>RTGS</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Amount (₹)</label>
+                    <div class="amount-wrapper">
+                        <span class="currency-symbol">₹</span>
+                        <input type="number" id="apex-amount" placeholder="0.00" min="1">
+                    </div>
+                </div>
+                <div class="form-group" style="justify-content:flex-end;">
+                    <label>Quick Select</label>
+                    <div class="quick-amounts">
+                        <span class="chip" onclick="setAmount('apex-amount',500)">₹500</span>
+                        <span class="chip" onclick="setAmount('apex-amount',1000)">₹1,000</span>
+                        <span class="chip" onclick="setAmount('apex-amount',5000)">₹5,000</span>
+                        <span class="chip" onclick="setAmount('apex-amount',10000)">₹10,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="form-group full">
+                <label>Remarks (Optional)</label>
+                <textarea id="apex-remarks" rows="3" placeholder="e.g. Rent for June"></textarea>
+            </div>
+
+            <div class="actions">
+                <button class="btn-secondary" onclick="resetForm('apex')">Clear</button>
+                <button class="btn-primary" onclick="submitTransfer('apex')">Transfer Now</button>
+            </div>
+        </div>
+
+        <!-- ── OTHER BANK TRANSFER FORM ── -->
+        <div class="transfer-card" id="form-other">
+            <h3>Transfer to Other Bank Account</h3>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>From Account</label>
+                    <select id="other-from">
+                        <option>Savings — ****4821</option>
+                        <option>Current — ****2209</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Beneficiary Account Number</label>
+                    <input type="text" id="other-accno" placeholder="Enter account number">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Beneficiary Name</label>
+                    <input type="text" id="other-name" placeholder="Account holder name">
+                </div>
+                <div class="form-group">
+                    <label>IFSC Code</label>
+                    <input type="text" id="other-ifsc" placeholder="e.g. SBIN0001234" maxlength="11" style="text-transform:uppercase;">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Bank Name</label>
+                    <input type="text" id="other-bank" placeholder="e.g. State Bank of India">
+                </div>
+                <div class="form-group">
+                    <label>Transfer Type</label>
+                    <select id="other-type">
+                        <option>IMPS (Instant)</option>
+                        <option>NEFT</option>
+                        <option>RTGS</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Amount (₹)</label>
+                    <div class="amount-wrapper">
+                        <span class="currency-symbol">₹</span>
+                        <input type="number" id="other-amount" placeholder="0.00" min="1">
+                    </div>
+                </div>
+                <div class="form-group" style="justify-content:flex-end;">
+                    <label>Quick Select</label>
+                    <div class="quick-amounts">
+                        <span class="chip" onclick="setAmount('other-amount',500)">₹500</span>
+                        <span class="chip" onclick="setAmount('other-amount',1000)">₹1,000</span>
+                        <span class="chip" onclick="setAmount('other-amount',5000)">₹5,000</span>
+                        <span class="chip" onclick="setAmount('other-amount',10000)">₹10,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="form-group full">
+                <label>Remarks (Optional)</label>
+                <textarea id="other-remarks" rows="3" placeholder="e.g. Payment for invoice #42"></textarea>
+            </div>
+
+            <div class="actions">
+                <button class="btn-secondary" onclick="resetForm('other')">Clear</button>
+                <button class="btn-primary" onclick="submitTransfer('other')">Transfer Now</button>
+            </div>
+        </div>
+
+        <!-- Recent Transfers -->
+        <div class="recent-card">
+            <h3>Recent Transfers</h3>
+            <div class="recent-list">
+                <div class="recent-item">
+                    <div class="recent-left">
+                        <div class="avatar">RK</div>
+                        <div>
+                            <div class="recent-name">Raj Kumar</div>
+                            <div class="recent-date">09 Jun 2026 · IMPS · Apex Bank</div>
+                        </div>
+                    </div>
+                    <div class="recent-amount debit">− ₹12,000</div>
+                </div>
+                <div class="recent-item">
+                    <div class="recent-left">
+                        <div class="avatar" style="background:#3274DA;">PS</div>
+                        <div>
+                            <div class="recent-name">Priya Sharma</div>
+                            <div class="recent-date">07 Jun 2026 · NEFT · HDFC Bank</div>
+                        </div>
+                    </div>
+                    <div class="recent-amount debit">− ₹5,500</div>
+                </div>
+                <div class="recent-item">
+                    <div class="recent-left">
+                        <div class="avatar" style="background:#778CAF;">AM</div>
+                        <div>
+                            <div class="recent-name">Amit Mehta</div>
+                            <div class="recent-date">02 Jun 2026 · RTGS · ICICI Bank</div>
+                        </div>
+                    </div>
+                    <div class="recent-amount debit">− ₹50,000</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="checkmark">✓</div>
+            <h3>Transfer Successful!</h3>
+            <p id="modal-msg">Your transfer has been initiated successfully.</p>
+            <button class="btn-primary" onclick="closeModal()">Done</button>
+        </div>
+    </div>
+</body>
+</html>

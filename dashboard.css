@@ -1,0 +1,324 @@
+/* ==========================================================================
+   dashboard.css  —  Apex Financial Bank
+   ========================================================================== */
+
+/* ── Main Panel View Layout ── */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 10px 0;
+}
+
+/* Header Topmost Segment */
+.topmost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.greeting h2 {
+    font-size: 1.6rem;
+    color: #021633;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.greeting p {
+    font-size: 0.88rem;
+    color: #7a8fa3;
+}
+
+#datetime {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #5a6e82;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid #e4ecf5;
+}
+
+/* ── Summary Metric Cards Grid ── */
+.dashboard-cards-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.dash-card {
+    background: #ffffff;
+    border: 1px solid #e4ecf5;
+    border-radius: 22px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: box-shadow 0.2s, transform 0.18s;
+}
+
+.dash-card:hover {
+    box-shadow: 0 8px 36px rgba(2, 22, 51, 0.08);
+    transform: translateY(-2px);
+}
+
+.dash-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dash-card-label {
+    font-size: 0.75rem;
+    color: #7a8fa3;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+.dash-card-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #021633;
+}
+
+.dash-card-desc {
+    font-size: 0.8rem;
+    color: #90a6be;
+    margin: 0;
+}
+
+/* Contextual Utilities & Micro Icons */
+.dash-mini-icon {
+    font-size: 0.95rem;
+    color: #7a8fa3;
+    background: #f4f8fd;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gain-text { color: #1e9952 !important; }
+.loss-text { color: #eb4747 !important; }
+
+/* Interactive Hide/Show Balance Toggle */
+.hide-btn {
+    background: #eef3fa;
+    color: #5a6e82;
+    border: none;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.15s;
+}
+
+.hide-btn:hover {
+    background: #e0ecff;
+    color: #3274DA;
+}
+
+/* ── Quick Actions Strip ── */
+.quick-actions-strip {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.quick-actions-strip button {
+    background: #021633;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.18s, transform 0.12s;
+}
+
+.quick-actions-strip button:hover {
+    background: #3274DA;
+    transform: translateY(-1px);
+}
+
+.quick-actions-strip button i {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* ── Analytics Workspace Grid System ── */
+.dashboard-analytics-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+}
+
+/* Recent Transactions Module */
+.dash-table-card.full-width-layout {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e4ecf5;
+    border-radius: 22px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.dash-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.dash-section-header h3 {
+    font-size: 1.02rem;
+    color: #021633;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dash-view-all {
+    font-size: 0.82rem;
+    color: #3274DA;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.dash-view-all:hover {
+    color: #021633;
+}
+
+/* Table Architecture Elements */
+.dash-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dash-table th {
+    font-size: 0.75rem;
+    color: #90a6be;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-bottom: 1px solid #e8f0f8;
+    text-align: left;
+}
+
+.dash-table td {
+    padding: 15px 16px;
+    font-size: 0.89rem;
+    color: #3a4e64;
+    border-bottom: 1px solid #f0f6fb;
+}
+
+.dash-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.dash-table tbody tr:hover td {
+    background: #f7fafd;
+}
+
+/* Status Data Badges Inside Table */
+.type-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 11px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    display: inline-block;
+}
+
+.spent-badge { background: #ffebeb; color: #eb4747; }
+.received-badge { background: #e2f7ec; color: #1a8a46; }
+
+.table-amount-gain { font-weight: 600; color: #1a8a46; }
+.table-amount-loss { font-weight: 600; color: #3a4e64; }
+
+/* ── Charts Grid Row Panel ── */
+.dashboard-charts-layout-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chart-box-card {
+    background: #ffffff;
+    border: 1px solid #e4ecf5;
+    border-radius: 22px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.chart-header h3 {
+    font-size: 0.98rem;
+    color: #021633;
+    font-weight: 700;
+    margin: 0;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 260px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================================================
+   Responsive Viewport Intercept Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 20px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard-charts-layout-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 24px;
+    }
+    .topmost {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

@@ -1,0 +1,95 @@
+/* ── Global Page Reset & Shell Layout ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    background: #edf1f6;
+    color: #3a4e64;
+    min-height: 100vh;
+    display: flex;
+    margin: 30px;
+    /* justify-content: center; */
+}
+
+
+.app-wrapper {
+    width: 100%;
+    /* max-width: 1440px; */
+}
+
+.container {
+    display: flex;
+
+    min-height: 100vh;
+    gap: 35px;
+}
+
+/* ── Left Sidebar Navigation (Unified) ── */
+.sidebar {
+    width: 275px;
+    background: #021633;
+    padding: 40px 22px;
+    border-radius: 24px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sidebar .logo h2 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    padding: 0 10px;
+    text-transform: uppercase;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #7a8fa3;
+    text-decoration: none;
+    padding: 14px 18px;
+    width: 100%;
+    border-radius: 14px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar a i {
+    font-size: 1.15rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar a span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+/* Sidebar Hover & Active Link States */
+.sidebar a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar a.active {
+    background: #ffffff;
+    color: #021633;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(2, 22, 51, 0.06);
+}

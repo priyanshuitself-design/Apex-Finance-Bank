@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cards</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="web.css">
+<link rel="stylesheet" href="cards.css">
+</head>
+<body>
+
+<div class="container">
+
+     <aside class="sidebar">
+            <div class="logo">
+                <h2>APEX FINANCIAL BANK</h2>
+            </div>
+            <ul>
+                <li>
+                    <a href="dashboard.html" >
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fundtransfer.html">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span>Fund Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cards.html" class="active">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="investment.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Investment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loan.html">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Loan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="insurance.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Insurance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="support.html">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+    <div class="rightcontainer">
+
+        <div class="topmost">
+            <div class="greeting">
+                <h2>Cards Management</h2>
+                <p>Track your active credit &amp; debit cards seamlessly</p>
+            </div>
+            <span id="datetime">Wed, 10 Jun, 2026</span>
+        </div>
+
+        <div class="card-summary-strip">
+            <div class="card-stat">
+                <span class="card-stat-label">Active Cards</span>
+                <span class="card-stat-value">2</span>
+            </div>
+            <div class="card-stat-divider"></div>
+            <div class="card-stat">
+                <span class="card-stat-label">Total Limit</span>
+                <span class="card-stat-value">₹5,00,000</span>
+            </div>
+            <div class="card-stat-divider"></div>
+            <div class="card-stat">
+                <span class="card-stat-label">Total Outstanding</span>
+                <span class="card-stat-value alert-text">₹42,150</span>
+            </div>
+            <div class="card-stat-divider"></div>
+            <div class="card-stat">
+                <span class="card-stat-label">Rewards Earned</span>
+                <span class="card-stat-value gain-text">4,850 pts</span>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="credit-card-item visa-theme">
+                <div class="cc-header">
+                    <span class="cc-bank-name">APEX CREDIT</span>
+                    <span class="cc-type">Signature</span>
+                </div>
+                <div class="cc-chip">
+                    <div class="chip-line"></div><div class="chip-line"></div>
+                    <div class="chip-line"></div><div class="chip-line"></div>
+                </div>
+                <div class="cc-number">**** **** **** 4920</div>
+                <div class="cc-footer">
+                    <div class="cc-holder">
+                        <span class="label">CARD HOLDER</span>
+                        <span class="val">ALEX P. REYNOLDS</span>
+                    </div>
+                    <div class="cc-expiry">
+                        <span class="label">EXPIRES</span>
+                        <span class="val">08/30</span>
+                    </div>
+                    <div class="cc-brand">VISA</div>
+                </div>
+                
+                <div class="card-quick-actions">
+                    <div class="action-tag">💳 Credit Limit: ₹3,00,000</div>
+                    <div class="action-tag">🔒 Status: Active</div>
+                    <button class="manage-card-btn">Manage Settings</button>
+                </div>
+            </div>
+
+            <div class="credit-card-item master-theme">
+                <div class="cc-header">
+                    <span class="cc-bank-name">APEX DEBIT</span>
+                    <span class="cc-type">Platinum</span>
+                </div>
+                <div class="cc-chip">
+                    <div class="chip-line"></div><div class="chip-line"></div>
+                    <div class="chip-line"></div><div class="chip-line"></div>
+                </div>
+                <div class="cc-number">**** **** **** 8841</div>
+                <div class="cc-footer">
+                    <div class="cc-holder">
+                        <span class="label">CARD HOLDER</span>
+                        <span class="val">ALEX P. REYNOLDS</span>
+                    </div>
+                    <div class="cc-expiry">
+                        <span class="label">EXPIRES</span>
+                        <span class="val">04/29</span>
+                    </div>
+                    <div class="cc-brand">mastercard</div>
+                </div>
+
+                <div class="card-quick-actions">
+                    <div class="action-tag">🔄 Linked Account: ...7890</div>
+                    <div class="action-tag">🔒 Status: Active</div>
+                    <button class="manage-card-btn">Manage Settings</button>
+                </div>
+            </div>
+
+        </div><div class="card-table-card">
+            <div class="card-table-header">
+                <h3>Recent Card Transactions</h3>
+                <span class="card-table-count">Last 30 Days</span>
+            </div>
+            <table class="card-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Card Reference</th>
+                        <th>Merchant / Details</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08 Jun 2026</td>
+                        <td><span class="type-badge cc-badge">Visa 4920</span></td>
+                        <td>Amazon India Store</td>
+                        <td>Shopping</td>
+                        <td class="negative-amt">-₹14,999</td>
+                        <td><span class="status-badge settled">Settled</span></td>
+                    </tr>
+                    <tr>
+                        <td>05 Jun 2026</td>
+                        <td><span class="type-badge cc-badge">Visa 4920</span></td>
+                        <td>Starbucks Coffee Shop</td>
+                        <td>Dining</td>
+                        <td class="negative-amt">-₹450</td>
+                        <td><span class="status-badge settled">Settled</span></td>
+                    </tr>
+                    <tr>
+                        <td>02 Jun 2026</td>
+                        <td><span class="type-badge dc-badge">MC 8841</span></td>
+                        <td>Netflix India Subscription</td>
+                        <td>Entertainment</td>
+                        <td class="negative-amt">-₹649</td>
+                        <td><span class="status-badge settled">Settled</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="cards.js"></script>
+
+</body>
+</html>

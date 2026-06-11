@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transaction History</title>
+
+<link rel="stylesheet" href="transactions.css">
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <h2>SecureBank</h2>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="transactions.html">Transactions</a></li>
+            <li><a href="cards.html">Cards</a></li>
+            <li><a href="loans.html">Loans</a></li>
+            <li><a href="transfer.html">Fund Transfer</a></li>
+            <li><a href="investments.html">Investments</a></li>
+            <li><a href="insurance.html">Insurance</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+
+    </aside>
+
+    <main class="main">
+
+        <h1>Transaction History</h1>
+
+        <div class="controls">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search Transaction ID"
+                onkeyup="searchTransaction()"
+            >
+
+            <button onclick="showAll()">
+                All
+            </button>
+
+            <button onclick="showSpent()">
+                Spent
+            </button>
+
+            <button onclick="showReceived()">
+                Received
+            </button>
+
+            <button onclick="downloadStatement()">
+                Download Statement
+            </button>
+
+        </div>
+
+        <table id="transactionTable">
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Person</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr data-type="received">
+
+                    <td>TXN1001</td>
+                    <td>01-Jun-2026</td>
+                    <td>Received</td>
+                    <td>Salary</td>
+                    <td>₹50,000</td>
+
+                    <td>
+                        <span class="success">
+                            Success
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr data-type="spent">
+
+                    <td>TXN1002</td>
+                    <td>03-Jun-2026</td>
+                    <td>Spent</td>
+                    <td>Amazon</td>
+                    <td>₹2,500</td>
+
+                    <td>
+                        <span class="success">
+                            Success
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr data-type="spent">
+
+                    <td>TXN1003</td>
+                    <td>05-Jun-2026</td>
+                    <td>Spent</td>
+                    <td>Swiggy</td>
+                    <td>₹850</td>
+
+                    <td>
+                        <span class="success">
+                            Success
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr data-type="received">
+
+                    <td>TXN1004</td>
+                    <td>08-Jun-2026</td>
+                    <td>Received</td>
+                    <td>Friend</td>
+                    <td>₹5,000</td>
+
+                    <td>
+                        <span class="success">
+                            Success
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr data-type="spent">
+
+                    <td>TXN1005</td>
+                    <td>10-Jun-2026</td>
+                    <td>Spent</td>
+                    <td>Electricity Bill</td>
+                    <td>₹1,750</td>
+
+                    <td>
+                        <span class="pending">
+                            Pending
+                        </span>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </main>
+
+</div>
+
+<script src="transactions.js"></script>
+
+</body>
+</html>

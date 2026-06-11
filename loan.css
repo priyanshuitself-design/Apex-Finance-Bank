@@ -1,0 +1,45 @@
+/* Keeping existing layout */
+        .loan-page { 
+            display: grid; gap: 30px; 
+        }
+
+        .input-group { 
+            display: grid; gap: 10px; 
+        }
+        input, select { 
+            padding: 12px; border: 1px solid #81848522; border-radius: 10px; 
+        }
+        button { 
+            background: #021633; color: white; padding: 15px; border-radius: 10px; border: none; cursor: pointer; 
+        }
+        button:hover { 
+            background: #3274DA; 
+        }
+
+        /* Updated styles */
+        .loan-sections { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; 
+        }
+        .loan-container { 
+            background: white; padding: 20px; border-radius: 15px; 
+        }
+        .loan-btn-container {
+             display: grid; gap: 15px; margin-top: 20px; 
+            }
+        .loan-btn { 
+            display: block; width: 100%; padding: 20px; 
+            border: 2px solid #021633; border-radius: 15px; 
+            background: white; text-align: left; cursor: pointer; text-decoration: none; color: black;
+        }
+        .loan-btn:hover { 
+            background: #f0f4ff; 
+        }
+        #result-display { 
+            font-weight: bold; margin-top: 10px; color: #021633; 
+        }
+        .ongoing-item { 
+            border-bottom: 1px solid #eee; padding: 20px; border-radius: 15px; display: block; text-decoration: none; color: inherit; 
+        }
+        .ongoing-item:hover { 
+            background: #f0f4ff; 
+        }

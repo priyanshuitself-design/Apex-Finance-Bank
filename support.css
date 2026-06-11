@@ -1,0 +1,178 @@
+
+/* ── Content View Workspace ── */
+.main {
+    flex: 1;
+    padding: 10px 15px 10px 0; /* Aligns content inside viewport */
+}
+
+.main h1 {
+    font-size: 1.8rem;
+    color: #021633;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+/* ── Card Systems ── */
+.faq-section,
+.contact-section,
+.write-section {
+    background: white;
+    padding: 30px;
+    border-radius: 22px;
+    border: 1px solid #e4ecf5;
+    margin-top: 25px;
+}
+
+.faq-section h2,
+.contact-section h2,
+.write-section h2 {
+    font-size: 1.1rem;
+    color: #021633;
+    margin-bottom: 22px;
+    font-weight: 700;
+}
+
+/* ── FAQ Component ── */
+.faq-item {
+    border: 1px solid #e8f0f8;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.faq-btn {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-btn span {
+    font-size: 0.93rem;
+    color: #021633;
+    font-weight: 600;
+}
+
+.faq-btn i {
+    color: #7a8fa3;
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.faq-btn:hover {
+    background: #fcfdfe;
+}
+
+.faq-item.active .faq-btn {
+    background: #f4f8fd;
+}
+
+.faq-item.active .faq-btn i {
+    transform: rotate(180deg);
+    color: #2563eb;
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.faq-content p {
+    padding: 0 24px 20px 24px;
+    font-size: 0.88rem;
+    color: #5a6e82;
+    line-height: 1.6;
+}
+
+/* ── Side-by-Side Horizontal Row ── */
+.support-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .support-split-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.support-split-layout .contact-section,
+.support-split-layout .write-section {
+    margin-top: 25px;
+}
+
+/* ── Contact Channels ── */
+.contact-methods-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-row-item {
+    padding: 16px;
+    background: #f4f8fd;
+    border: 1px solid #e2ecf7;
+    border-radius: 14px;
+}
+
+.contact-section p {
+    font-size: 0.9rem;
+    color: #3a4e64;
+    line-height: 1.4;
+}
+
+.contact-section strong {
+    color: #021633;
+}
+
+/* ── Form Inputs ── */
+input,
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border: 1.5px solid #cddcec;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    background: white;
+    color: #021633;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2563eb;
+}
+
+textarea {
+    height: 130px;
+    resize: none;
+    line-height: 1.5;
+}
+
+form button {
+    width: 100%;
+    padding: 14px;
+    background: #021633;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+form button:hover {
+    background: #2563eb;
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Financial Bank – Investment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="web.css">
+<link rel="stylesheet" href="investment.css">
+<script src="investment.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+     <aside class="sidebar">
+            <div class="logo">
+                <h2>APEX FINANCIAL BANK</h2>
+            </div>
+            <ul>
+                <li>
+                    <a href="dashboard.html" >
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="fundtransfer.html"">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <span>Fund Transfer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cards.html">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="investment.html" class="active">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Investment</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loan.html">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span>Loan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="insurance.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Insurance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="support.html">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+    <!-- ── Right Content ── -->
+    <div class="rightcontainer">
+
+        <!-- Top bar -->
+        <div class="topmost">
+            <div class="greeting">
+                <h2>Investment</h2>
+                <p>Grow your savings with Fixed &amp; Recurring Deposits</p>
+            </div>
+            <span id="datetime">--</span>
+        </div>
+
+        <!-- ── Summary Strip ── -->
+        <div class="inv-summary-strip">
+            <div class="inv-stat">
+                <span class="inv-stat-label">Active FDs</span>
+                <span class="inv-stat-value">2</span>
+            </div>
+            <div class="inv-stat-divider"></div>
+            <div class="inv-stat">
+                <span class="inv-stat-label">Active RDs</span>
+                <span class="inv-stat-value">1</span>
+            </div>
+            <div class="inv-stat-divider"></div>
+            <div class="inv-stat">
+                <span class="inv-stat-label">Total Invested</span>
+                <span class="inv-stat-value">₹3,50,000</span>
+            </div>
+            <div class="inv-stat-divider"></div>
+            <div class="inv-stat">
+                <span class="inv-stat-label">Est. Returns</span>
+                <span class="inv-stat-value gain">₹28,450</span>
+            </div>
+        </div>
+
+        <!-- ── FD & RD Cards ── -->
+        <div class="investment-grid">
+
+            <!-- Fixed Deposit -->
+            <div class="invest-card">
+                <div class="invest-card-header">
+                    <div class="invest-icon-wrap fd-icon">
+                        <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="12" width="28" height="19" rx="4" fill="#3274DA" opacity="0.12"/>
+                            <rect x="5" y="12" width="28" height="19" rx="4" stroke="#3274DA" stroke-width="2"/>
+                            <path d="M13 12V9.5a6 6 0 0 1 12 0V12" stroke="#3274DA" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="19" cy="21" r="3.5" fill="#3274DA"/>
+                            <path d="M19 24.5v3" stroke="#3274DA" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="invest-card-title">
+                        <h3>Fixed Deposit</h3>
+                        <span class="invest-tag">FD</span>
+                    </div>
+                </div>
+
+                <p class="invest-desc">Lock in a lump sum for a fixed tenure and earn guaranteed returns via quarterly compounding — ideal for low-risk wealth preservation.</p>
+
+                <div class="invest-highlights">
+                    <div class="inv-hl">📈 Up to 7.5% p.a.</div>
+                    <div class="inv-hl">🔒 Capital protected</div>
+                    <div class="inv-hl">📅 7 days – 10 years</div>
+                </div>
+
+                <button class="open-calc-btn" onclick="toggleCalc('fd-calc', this)">Open Calculator</button>
+
+                <div class="calculator-panel" id="fd-calc">
+                    <div class="calc-header">
+                        <h4>FD Maturity Calculator</h4>
+                        <span class="calc-formula">Quarterly compounding · A = P(1 + r/4)^4n</span>
+                    </div>
+                    <div class="calc-fields">
+                        <div class="calc-field">
+                            <label>Principal Amount (₹)</label>
+                            <input type="number" id="fd-principal" placeholder="e.g. 1,00,000" min="1000">
+                        </div>
+                        <div class="calc-field">
+                            <label>Annual Interest Rate (%)</label>
+                            <input type="number" id="fd-rate" placeholder="e.g. 7.5" step="0.1" min="0.1" max="15">
+                        </div>
+                        <div class="calc-field">
+                            <label>Tenure (Months)</label>
+                            <input type="number" id="fd-months" placeholder="e.g. 12" min="1" max="120">
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="calcFD()">Calculate Maturity</button>
+                    <div class="calc-result" id="fd-result">
+                        <div class="result-row">
+                            <span>Principal Invested</span>
+                            <span id="fd-res-principal">—</span>
+                        </div>
+                        <div class="result-row">
+                            <span>Interest Earned</span>
+                            <span id="fd-res-interest" class="gain-text">—</span>
+                        </div>
+                        <div class="result-divider"></div>
+                        <div class="result-row result-total">
+                            <span>Maturity Amount</span>
+                            <span id="fd-res-maturity">—</span>
+                        </div>
+                        <div class="result-bar-wrap">
+                            <div class="result-bar-label"><span>Principal</span><span>Interest</span></div>
+                            <div class="result-bar">
+                                <div class="result-bar-principal" id="fd-bar-p"></div>
+                                <div class="result-bar-interest" id="fd-bar-i"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recurring Deposit -->
+            <div class="invest-card">
+                <div class="invest-card-header">
+                    <div class="invest-icon-wrap rd-icon">
+                        <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="19" cy="19" r="13" fill="#021633" opacity="0.07"/>
+                            <path d="M10 19a9 9 0 0 1 16.3-5.2" stroke="#021633" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M28 19a9 9 0 0 1-16.3 5.2" stroke="#021633" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M25 10.5l1.5 3.5-3.5.5" stroke="#021633" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13 27.5l-1.5-3.5 3.5-.5" stroke="#021633" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="15" y="21.5" font-size="8" fill="#021633" font-weight="bold" font-family="Arial">₹</text>
+                        </svg>
+                    </div>
+                    <div class="invest-card-title">
+                        <h3>Recurring Deposit</h3>
+                        <span class="invest-tag rd-tag">RD</span>
+                    </div>
+                </div>
+
+                <p class="invest-desc">Invest a fixed amount every month and watch it grow through the power of compounding — a disciplined way to build your corpus over time.</p>
+
+                <div class="invest-highlights">
+                    <div class="inv-hl">📈 Up to 7.0% p.a.</div>
+                    <div class="inv-hl">🔄 Monthly installments</div>
+                    <div class="inv-hl">📅 6 months – 10 years</div>
+                </div>
+
+                <button class="open-calc-btn" onclick="toggleCalc('rd-calc', this)">Open Calculator</button>
+
+                <div class="calculator-panel" id="rd-calc">
+                    <div class="calc-header">
+                        <h4>RD Maturity Calculator</h4>
+                        <span class="calc-formula">Standard Indian bank RD formula · Quarterly compounding</span>
+                    </div>
+                    <div class="calc-fields">
+                        <div class="calc-field">
+                            <label>Monthly Installment (₹)</label>
+                            <input type="number" id="rd-monthly" placeholder="e.g. 5,000" min="100">
+                        </div>
+                        <div class="calc-field">
+                            <label>Annual Interest Rate (%)</label>
+                            <input type="number" id="rd-rate" placeholder="e.g. 6.8" step="0.1" min="0.1" max="15">
+                        </div>
+                        <div class="calc-field">
+                            <label>Tenure (Months)</label>
+                            <input type="number" id="rd-months" placeholder="e.g. 24" min="6" max="120">
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="calcRD()">Calculate Maturity</button>
+                    <div class="calc-result" id="rd-result">
+                        <div class="result-row">
+                            <span>Total Invested</span>
+                            <span id="rd-res-invested">—</span>
+                        </div>
+                        <div class="result-row">
+                            <span>Interest Earned</span>
+                            <span id="rd-res-interest" class="gain-text">—</span>
+                        </div>
+                        <div class="result-divider"></div>
+                        <div class="result-row result-total">
+                            <span>Maturity Amount</span>
+                            <span id="rd-res-maturity">—</span>
+                        </div>
+                        <div class="result-bar-wrap">
+                            <div class="result-bar-label"><span>Invested</span><span>Interest</span></div>
+                            <div class="result-bar">
+                                <div class="result-bar-principal" id="rd-bar-p"></div>
+                                <div class="result-bar-interest" id="rd-bar-i"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /investment-grid -->
+
+        <!-- ── Active Investments Table ── -->
+        <div class="inv-table-card">
+            <div class="inv-table-header">
+                <h3>Active Investments</h3>
+                <span class="inv-table-count">3 deposits</span>
+            </div>
+            <table class="inv-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Principal / Monthly</th>
+                        <th>Rate</th>
+                        <th>Tenure</th>
+                        <th>Maturity Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="type-badge fd-badge">FD</span></td>
+                        <td>₹1,00,000</td>
+                        <td>7.25%</td>
+                        <td>12 months</td>
+                        <td>Mar 2026</td>
+                        <td><span class="status-badge active">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="type-badge fd-badge">FD</span></td>
+                        <td>₹2,00,000</td>
+                        <td>7.50%</td>
+                        <td>24 months</td>
+                        <td>Jun 2027</td>
+                        <td><span class="status-badge active">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="type-badge rd-badge">RD</span></td>
+                        <td>₹5,000 / mo</td>
+                        <td>6.80%</td>
+                        <td>18 months</td>
+                        <td>Dec 2025</td>
+                        <td><span class="status-badge active">Active</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div><!-- /rightcontainer -->
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home Loan Application</title>
+
+<link rel="stylesheet" href="loan-form.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="form-card">
+
+<h1>Home Loan Application</h1>
+
+<form id="loanForm">
+
+<h3>Applicant Details</h3>
+
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+<input type="tel" placeholder="Mobile Number" required>
+
+<h3>Property Details</h3>
+
+<input type="text" placeholder="Property Address" required>
+<input type="number" placeholder="Property Value" required>
+<input type="number" placeholder="Down Payment" required>
+
+<h3>Loan Requirement</h3>
+
+<input type="number" placeholder="Loan Amount" required>
+
+<select required>
+
+<option value="">
+Select Tenure
+</option>
+
+<option>10 Years</option>
+<option>15 Years</option>
+<option>20 Years</option>
+<option>30 Years</option>
+
+</select>
+
+<button>
+Submit Application
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="loan-form.js"></script>
+
+</body>
+</html>

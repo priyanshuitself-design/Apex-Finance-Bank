@@ -1,0 +1,328 @@
+/* Right Content Container Layout */
+.rightcontainer {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+/* ── Top Bar Alignment ── */
+.topmost {
+    background-color: white;
+    border: 1px solid #81848522;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.topmost .greeting h2 {
+    font-size: 1.6rem;
+    color: #021633;
+    margin-bottom: 4px;
+}
+
+.topmost #datetime {
+    font-weight: 500;
+    color: #646464;
+}
+
+/* ── Summary Horizontal Strip ── */
+.card-summary-strip {
+    background-color: #021633;
+    border-radius: 20px;
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    box-shadow: 0 4px 15px rgba(2, 22, 51, 0.08);
+}
+
+.card-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    text-align: center;
+}
+
+.card-stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a8bdd4;
+}
+
+.card-stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.card-stat-value.gain-text {
+    color: #2ec4b6;
+}
+
+.card-stat-value.alert-text {
+    color: #ff9f1c;
+}
+
+.card-stat-divider {
+    width: 1px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Two Column Responsive Matrix Grid ── */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* ── Realistic Skew/Shadow Credit Card Element ── */
+.credit-card-item {
+    background: linear-gradient(135deg, #0e2954 0%, #021633 100%);
+    border-radius: 24px;
+    padding: 30px;
+    color: white;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(2, 22, 51, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 260px; /* Gives the physical cards a clean aspect ratio */
+}
+
+.credit-card-item.visa-theme {
+    background: linear-gradient(135deg, #1a4480 0%, #0a2246 100%);
+}
+
+.credit-card-item.master-theme {
+    background: linear-gradient(135deg, #1c355e 0%, #0b1a30 100%);
+}
+
+.cc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cc-bank-name {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.cc-type {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* EMV microchip element simulation */
+.cc-chip {
+    width: 40px;
+    height: 30px;
+    background: linear-gradient(135deg, #f0d38d 0%, #d4af37 100%);
+    border-radius: 6px;
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2px;
+    gap: 2px;
+}
+
+.chip-line {
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+.cc-number {
+    font-size: 1.4rem;
+    letter-spacing: 0.18em;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 25px;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.4);
+}
+
+.cc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.cc-holder .label, .cc-expiry .label {
+    display: block;
+    font-size: 0.6rem;
+    color: #a8bdd4;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+}
+
+.cc-holder .val, .cc-expiry .val {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.cc-brand {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+/* ── Lower Info Block & Controls inside Grid Item ── */
+.card-quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-tag {
+    font-size: 0.82rem;
+    color: #a8bdd4;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 8px 14px;
+    border-radius: 10px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.manage-card-btn {
+    background-color: #ffffff;
+    color: #021633;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.manage-card-btn:hover {
+    background-color: #f0f4f8;
+}
+
+.manage-card-btn:active {
+    transform: scale(0.99);
+}
+
+/* ── Transactions Display Area ── */
+.card-table-card {
+    background-color: white;
+    border: 1px solid #81848522;
+    border-radius: 25px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+}
+
+.card-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.card-table-header h3 {
+    font-size: 1.15rem;
+    color: #021633;
+}
+
+.card-table-count {
+    font-size: 0.78rem;
+    background-color: #eff4f8;
+    color: #646464;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.card-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.card-table th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #848484;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f2f3;
+    text-align: left; /* Aligns table headers with table cells nicely */
+}
+
+.card-table td {
+    padding: 16px 12px;
+    font-size: 0.9rem;
+    color: #2d3748;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+/* Badge Layout Styling */
+.type-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.cc-badge {
+    background-color: rgba(14, 41, 84, 0.1);
+    color: #0e2954;
+}
+
+.dc-badge {
+    background-color: rgba(28, 53, 94, 0.1);
+    color: #1c355e;
+}
+
+.negative-amt {
+    font-weight: 600;
+    color: #e63946;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.status-badge.settled {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        display: none; /* simple hidden layout for mobile viewports */
+    }
+    .rightcontainer {
+        padding: 16px;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

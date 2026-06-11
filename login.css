@@ -1,0 +1,209 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:1100px;
+    height:700px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Left Section */
+.left{
+    width:50%;
+    background:#021633;
+    color:white;
+    position:relative;
+    padding:40px;
+}
+
+.left h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.left p{
+    color:#9fb4d9;
+}
+
+
+.bank-icon::before{
+    content:"";
+    position:absolute;
+    top:-30px;
+    left:20px;
+    border-left:55px solid transparent;
+    border-right:55px solid transparent;
+    border-bottom:30px solid #294b79;
+}
+
+.badge{
+    position:absolute;
+    background:#1e3557;
+    color:#fff;
+    padding:10px 15px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.badge1{
+    bottom:40px;
+    right:40px;
+}
+
+.badge2{
+    bottom:40px;
+    right:200px;
+}
+
+.badge3{
+    bottom:40px;
+    left:40px;
+}
+
+
+
+/* Right Section */
+.right{
+    width:50%;
+    padding:80px 60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.form-box{
+    width:100%;
+    max-width:380px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:40px;
+}
+
+.logo-icon{
+    width:25px;
+    height:25px;
+    background:#2f7ddf;
+    border-radius:8px;
+}
+
+.logo h2{
+    color:#1a1a1a;
+}
+
+.form-box h1{
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#777;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    margin-top:15px;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px 0;
+    font-size:14px;
+}
+
+.options a{
+    text-decoration:none;
+    color:#2f7ddf;
+}
+
+.signin-btn{
+    width:100%;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    background:linear-gradient(to right,#2d6cd4,#4da3ff);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.divider{
+    text-align:center;
+    margin:25px 0;
+    color:#888;
+    position:relative;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    width:35%;
+    height:1px;
+    background:#ddd;
+}
+
+.divider::before{
+    left:0;
+}
+
+.divider::after{
+    right:0;
+}
+
+.social{
+    display:flex;
+    gap:15px;
+}
+
+.social button{
+    flex:1;
+    padding:12px;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.signup{
+    text-align:center;
+    margin-top:20px;
+    color:#666;
+}
+
+.signup a{
+    color:#2f7ddf;
+    text-decoration:none;
+}

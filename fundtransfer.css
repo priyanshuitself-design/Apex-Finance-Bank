@@ -1,0 +1,385 @@
+/* ── RIGHT CONTAINER ── */
+        .rightcontainer {
+            width: 82%;
+            display: flex;
+            flex-direction: column;
+            background: #f0f2f3;
+            color: rgb(0, 0, 0);
+            position: relative;
+            padding: 30px 40px;
+            gap: 24px;
+        }
+
+        /* Top bar */
+        .topmost {
+            background-color: white;
+            border: 1px solid #81848522;
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 30px;
+        }
+
+        .topmost span {
+            background-color: #eff4f8;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .greeting h2 {
+            font-size: 20px;
+            color: #021633;
+        }
+
+        .greeting p {
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        /* Tab switcher */
+        .tab-bar {
+            display: flex;
+            gap: 0;
+            background: white;
+            border-radius: 16px;
+            padding: 6px;
+            width: fit-content;
+            border: 1px solid #e0e4e8;
+        }
+
+        .tab-btn {
+            padding: 10px 28px;
+            border: none;
+            background: transparent;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #778CAF;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .tab-btn.active {
+            background: #021633;
+            color: white;
+        }
+
+        /* Transfer form card */
+        .transfer-card {
+            background: white;
+            border-radius: 25px;
+            border: 1px solid #81848522;
+            padding: 36px 40px;
+            display: none;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .transfer-card.visible {
+            display: flex;
+        }
+
+        .transfer-card h3 {
+            font-size: 16px;
+            color: #021633;
+            margin-bottom: 4px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #778CAF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group input,
+        .form-group select {
+            border: 1.5px solid #e0e4e8;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #021633;
+            outline: none;
+            background: #f9fbfc;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #3274DA;
+            background: white;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        /* Balance pill */
+        .balance-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #eff4f8;
+            border-radius: 12px;
+            padding: 12px 18px;
+            width: fit-content;
+        }
+
+        .balance-pill .label {
+            font-size: 12px;
+            color: #778CAF;
+            font-weight: 600;
+        }
+
+        .balance-pill .amount {
+            font-size: 18px;
+            font-weight: 700;
+            color: #021633;
+        }
+
+        /* Amount row */
+        .amount-wrapper {
+            position: relative;
+        }
+
+        .amount-wrapper .currency-symbol {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #778CAF;
+            font-weight: 700;
+        }
+
+        .amount-wrapper input {
+            padding-left: 30px !important;
+        }
+
+        /* Quick amount chips */
+        .quick-amounts {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .chip {
+            padding: 6px 16px;
+            border: 1.5px solid #e0e4e8;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #021633;
+            cursor: pointer;
+            background: white;
+            transition: all 0.15s;
+        }
+
+        .chip:hover {
+            border-color: #3274DA;
+            color: #3274DA;
+            background: #f0f5ff;
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            border-top: 1px solid #e8ecf0;
+        }
+
+        /* Remarks */
+        .form-group textarea {
+            border: 1.5px solid #e0e4e8;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #021633;
+            outline: none;
+            background: #f9fbfc;
+            resize: none;
+            transition: border-color 0.2s;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .form-group textarea:focus {
+            border-color: #3274DA;
+            background: white;
+        }
+
+        /* Action buttons */
+        .actions {
+            display: flex;
+            gap: 14px;
+            justify-content: flex-end;
+        }
+
+        .btn-secondary {
+            padding: 12px 28px;
+            border: 1.5px solid #e0e4e8;
+            border-radius: 12px;
+            background: white;
+            color: #778CAF;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #778CAF;
+            color: #021633;
+        }
+
+        .btn-primary {
+            padding: 12px 36px;
+            border: none;
+            border-radius: 12px;
+            background: #021633;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #3274DA;
+        }
+
+        /* Recent transfers */
+        .recent-card {
+            background: white;
+            border-radius: 25px;
+            border: 1px solid #81848522;
+            padding: 28px 36px;
+        }
+
+        .recent-card h3 {
+            font-size: 16px;
+            color: #021633;
+            margin-bottom: 20px;
+        }
+
+        .recent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .recent-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            background: #f9fbfc;
+            border-radius: 14px;
+            border: 1px solid #e8ecf0;
+        }
+
+        .recent-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #021633;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recent-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #021633;
+        }
+
+        .recent-date {
+            font-size: 12px;
+            color: #778CAF;
+            margin-top: 2px;
+        }
+
+        .recent-amount {
+            font-size: 15px;
+            font-weight: 700;
+            color: #021633;
+        }
+
+        .recent-amount.debit {
+            color: #D94040;
+        }
+
+        /* Success modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 22, 51, 0.45);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 24px;
+            padding: 44px 48px;
+            text-align: center;
+            max-width: 380px;
+            width: 90%;
+        }
+
+        .modal .checkmark {
+            width: 64px;
+            height: 64px;
+            background: #e6f9ef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .modal h3 {
+            font-size: 20px;
+            color: #021633;
+            margin-bottom: 8px;
+        }
+
+        .modal p {
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .modal .btn-primary {
+            width: 100%;
+        }
